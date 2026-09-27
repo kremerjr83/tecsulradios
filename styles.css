@@ -14,3 +14,116 @@
 @media(max-width:900px){header .desktop{display:none}#menu{display:block}nav{display:none;position:absolute;top:86px;left:0;right:0;background:#fff;padding:20px;flex-direction:column}nav.open{display:flex}.hero,#contato{grid-template-columns:1fr}.radio{height:280px;font-size:110px}.cards,.grid{grid-template-columns:1fr}form{grid-template-columns:1fr}header img{width:150px}footer{flex-direction:column;text-align:center}}
 @media(max-width:680px){section{padding:72px 5%}.portfolio-grid{grid-template-columns:1fr;gap:18px}.portfolio-card-principal{grid-column:auto}.portfolio-card img,.portfolio-card-principal img{width:100%;height:auto;max-height:none;aspect-ratio:16/9;object-fit:contain}.portfolio-card-conteudo{padding:16px}.portfolio-card-conteudo h3{font-size:19px}.portfolio-card-conteudo p{font-size:13px}}
 @media(max-width:560px){.tag{font-size:11px;letter-spacing:0;padding:8px 10px}.hero{padding-left:5%;padding-right:5%}footer img{width:min(280px,85vw);height:auto}}
+/* CORRECAO DO PORTFOLIO - adicionar ao final do styles.css */
+
+#portfolio .portfolio-grid {
+    width: min(1180px, 100%) !important;
+    margin: 42px auto 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    align-items: start !important;
+}
+
+#portfolio .portfolio-card,
+#portfolio .portfolio-card-principal {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(140, 216, 248, 0.25) !important;
+    border-radius: 20px !important;
+    background: #071827 !important;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25) !important;
+}
+
+#portfolio .portfolio-card img,
+#portfolio .portfolio-card-principal img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 9 !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #071827 !important;
+}
+
+#portfolio .portfolio-card::after,
+#portfolio .portfolio-card-principal::after {
+    content: none !important;
+    display: none !important;
+}
+
+#portfolio .portfolio-card-conteudo {
+    position: static !important;
+    inset: auto !important;
+    padding: 18px 16px 20px !important;
+    text-align: center !important;
+    background: #0b2235 !important;
+}
+
+#portfolio .portfolio-card-conteudo h3 {
+    margin: 0 !important;
+    color: #ffffff !important;
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+}
+
+#portfolio .portfolio-card-conteudo p {
+    margin: 8px auto 0 !important;
+    color: #d7eef8 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+@media (max-width: 1000px) {
+    #portfolio .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    #portfolio .portfolio-card-principal {
+        grid-column: 1 / -1 !important;
+        width: min(760px, 100%) !important;
+        justify-self: center !important;
+    }
+}
+
+@media (max-width: 680px) {
+    #portfolio .portfolio-grid {
+        width: 100% !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+    }
+
+    #portfolio .portfolio-card,
+    #portfolio .portfolio-card-principal {
+        grid-column: auto !important;
+        width: 100% !important;
+    }
+
+    #portfolio .portfolio-card img,
+    #portfolio .portfolio-card-principal img {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 9 !important;
+        object-fit: contain !important;
+    }
+
+    #portfolio .portfolio-card-conteudo {
+        padding: 15px !important;
+    }
+
+    #portfolio .portfolio-card-conteudo h3 {
+        font-size: 18px !important;
+    }
+
+    #portfolio .portfolio-card-conteudo p {
+        font-size: 13px !important;
+    }
+}
